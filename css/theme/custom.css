@@ -1,0 +1,23 @@
+.reveal section img {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    box-shadow: none;
+    max-height: 100vh;
+}
+
+.reveal pre {
+    box-shadow: none;
+    text-align: center;
+}
+
+.reveal pre code {
+    background-color: #171e27;
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    border-radius: 0.5rem;
+    color: #ffffff;
+}
+
+.reveal pre code.multiline {
+    text-align: left;
+}

@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>PM2</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+		<link rel="stylesheet" href="css/theme/custom.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background-image="img/pm2-bg.png">
+					<section>
+							<img data-src="img/pm2-logo-light.png">
+					</section>
+					<section>
+							<img data-src="img/homer-surprised.png">
+					</section>
+				</section>
+				<section>
+						<section>
+							<pre><code>node index.js</code></pre>
+						</section>
+						<section>
+							<pre><code>nodemon index.js</code></pre>
+						</section>
+				</section>
+				<section data-background-image="img/homer-scared.png"></section>
+				<section>
+					<img data-src="img/pm2-logo-dark.png">
+					<p>Advanced, production process manager for Node.js with a built-in load balancer</p>
+				</section>
+				<section>
+					<section>
+						<pre><code>npm i pm2 -g</code></pre>
+						<pre><code>yarn global add pm2</code></pre>
+					</section>
+					<section>
+						<pre><code>pm2 start app -n app-name</code></pre>
+					</section>
+					<section>
+						<pre><code>pm2 stop app</code></pre>
+						<pre><code>pm2 restart app</code></pre>
+						<pre><code>pm2 delete app</code></pre>
+					</section>
+					<section>
+						<img data-src="img/homer-happy.png">
+					</section>
+				</section>
+				<section>
+					<pre><code>pm2 startup</code></pre>
+					<pre><code>sudo su -c "env<br>PATH=$PATH:/home/unitech/.nvm/versions/node/v4.3/bin<br>pm2 startup &lt;distribution&gt; -u &lt;user&gt;<br>--hp &lt;home-path&gt;&lt;/home-path&gt;</code></pre>		
+				</section>
+				<section>
+					<pre><code>pm2 logs</code></pre>
+					<pre><code>pm2 logs app</code></pre>
+					<pre><code>pm2 flush</code></pre>
+				</section>
+				<section>
+					<section>
+						<pre><code>pm2 list</code></pre>
+						<img data-src="img/pm2-list.png">
+					</section>
+					<section>
+						<pre><code>pm2 monit</code></pre>
+						<img data-src="img/pm2-monit.png">
+					</section>
+					<section>
+						<pre><code>pm2 describe app</code></pre>
+						<img data-src="img/pm2-describe.png">
+					</section>
+				</section>
+				<section>
+						<section>
+							<pre><code>pm2 start app -i max</code></pre>
+							<img data-src="img/pm2-cluster.png">
+						</section>
+						<section>
+							<pre><code>pm2 reload app</code></pre>
+						</section>
+				</section>
+				<section>
+					<section>
+						<pre><code class="multiline">module.exports = {<br>  apps: [{<br>    name: 'worker',<br>    script: './worker.js',<br>    watch: true,<br>  },<br>  {<br>    name: 'api-app',<br>    script: './api.js',<br>    instances: 4,<br>    exec_mode: 'cluster',<br>  }],<br>};</code></pre>
+					</section>
+					<section>
+						<pre><code>pm2 start config</code></pre>
+						<pre><code>pm2 stop config</code></pre>
+						<pre><code>pm2 restart config</code></pre>
+						<pre><code>pm2 reload config</code></pre>
+					</section>
+				</section>
+				<section>
+					<section data-background-image="img/homer-hammer.png">
+						<pre><code>pm2 install &lt;module&gt;</code></pre>
+					</section>
+					<section>
+						<pre><code>pm2 install pm2-logrotate</code></pre>
+						<p>automatically rotate logs of processes managed by PM2</p>
+					</section>
+					<section>
+						<pre><code>pm2 install pm2-webshell</code></pre>
+						<p>Fully capable Webshell</p>
+					</section>
+					<section>
+						<pre><code>pm2 install pm2-server-monit</code></pre>
+						<p>Automatically monitor vital signs of your server</p>
+					</section>
+				</section>
+				<section>
+					<p>
+						<strong>forever.js</strong><br>
+						A simple CLI tool for ensuring that a given script runs continuously
+					</p>
+					<p>
+						<strong>StongLoop</strong><br>
+						A production process manager for Node.js applications
+					</p>
+				</section>
+				<section>
+					<a href="https://pm2.io">pm2.io</a><br>
+					<a href="https://github.com/Unitech/pm2">github.com/Unitech/pm2</a><br>
+					<img data-src="img/qr.png"><br>
+					<a href="https://github.com/dnlklbv">github.com/dnlklbv</a><br>
+					<a href="https://t.me/dnlklbv">t.me/dnlklbv</a><br>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+				]
+			});
+		</script>
+	</body>
+</html>
